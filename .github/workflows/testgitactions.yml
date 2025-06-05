@@ -2,7 +2,7 @@ name: Testing GitHub Actions
 on: workflow_dispatch
 jobs:
   gactions:
-    runs-on: self-hosted
+    runs-on: ubuntu-latest
     steps:
       - name: Test sTring
       - run: echo 'Testing githubactions'
