@@ -1,7 +1,7 @@
 name: Testing GitHub Actions
 on: workflow_dispatch
 jobs:
-  gactions:
+  gtaction:
     runs-on: Windows
     steps:
       - name: Test sTring
