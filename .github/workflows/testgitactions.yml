@@ -5,6 +5,6 @@ jobs:
     runs-on: windows-latest
     steps:
       - name: Test sTring
-      - run: echo 'Testing githubactions'
+        run: echo 'Testing githubactions'
       
   
