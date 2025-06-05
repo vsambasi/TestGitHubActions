@@ -2,7 +2,7 @@ name: Testing GitHub Actions
 on: workflow_dispatch
 jobs:
   gtaction:
-    runs-on: Windows
+    runs-on: windows-latest
     steps:
       - name: Test sTring
       - run: echo 'Testing githubactions'
