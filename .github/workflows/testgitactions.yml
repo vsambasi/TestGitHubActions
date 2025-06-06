@@ -1,10 +1,10 @@
-name: Testing GitHub Actions
+name: Testing Projects
 on: workflow_dispatch
 jobs:
-  gtaction:
+  Lint:
     runs-on: ubuntu-latest
     steps:
-      - name: Test sTring
-        run: echo "${{toJSON(github.repository)}}"
+      - name: Testproject
+        run: lint
       
   
