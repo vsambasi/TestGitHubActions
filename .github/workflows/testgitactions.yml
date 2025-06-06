@@ -9,6 +9,6 @@ jobs:
       - name: Install Dependencies
         run: npm ci
       - name: Running Lint
-        run: npm run linet
+        run: npm run lint
       
   
