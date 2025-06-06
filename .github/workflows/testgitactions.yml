@@ -4,9 +4,11 @@ jobs:
   Lint:
     runs-on: ubuntu-latest
     steps:
+      - name: Get code
+        uses: actions/checkout@v3
       - name: Install Dependencies
         run: npm ci
-      - name: Build Project
-        run: npm run build
+      - name: Running Lint
+        run: npm run linet
       
   
