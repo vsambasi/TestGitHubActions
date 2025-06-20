@@ -12,8 +12,9 @@ jobs:
           #github-token: ${{secrets.GIT_PAT_TOKEN}}
           script: |
             github.rest.issues.createComment({
-              owner: 'vesambas'
-              body: 'Deployment is validated.. '
+              owner: 'vesambas',
+              #repo: '${{github.event.repository.name}}',
+              body: Deployment is validated.. 
             })
             
           
