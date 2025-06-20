@@ -8,6 +8,7 @@ jobs:
         results: ${{job.status}}
     steps:
       - id: test-validate-id
+        uses: actions/github-script@V6
         name: Add comment after validation
   notify-on-reject:
     runs-on: ubuntu-latest
