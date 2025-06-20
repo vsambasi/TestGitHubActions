@@ -13,7 +13,6 @@ jobs:
           script: |
             github.rest.issues.createComment({
               owner: 'vesambas',
-              #repo: '${{github.event.repository.name}}',
               body: Deployment is validated.. 
             })
             
