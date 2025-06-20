@@ -1,16 +1,20 @@
 name: Testing Projects
 on: workflow_dispatch
 jobs:
-  Lint:
+  ValidateProdDeployment:
     runs-on: ubuntu-latest
+    environment: Validate production deployment
     steps:
-      - name: Get code
-        uses: actions/checkout@v3
-      - name: Install Dependencies
-        run: npm ci
-      - name: Running Lint
-        run: |
-          npm init @eslint/config
-          npm run lint
-      
+      - id: test validate id
+        name: Add comment after validation
+        uses: actions/github-script@V6
+        with:
+          github-token: ${{secrets.GIT_PAT_TOKEN}}
+          script: |
+            github.rest.issues.createComment({
+              owner: 'vesambas'
+              body: 'Deployment is validated.. '
+            })
+            
+          
   
