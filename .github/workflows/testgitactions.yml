@@ -7,9 +7,8 @@ jobs:
     steps:
       - id: test-validate-id
         name: Add comment after validation
-        if: ${{ github.job.status == 'cancelled'}}
         run: |
-            echo "After clicking reject button"
+            echo '${{github.job.status}}'
             
           
   
