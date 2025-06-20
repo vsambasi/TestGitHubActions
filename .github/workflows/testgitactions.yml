@@ -15,6 +15,9 @@ jobs:
               owner: 'vesambas',
               body: 'Deployment'
             })
+          if: ${{ github.job.status === 'cancelled'}}
+          run: |
+            echo "After clicking reject button"
             
           
   
