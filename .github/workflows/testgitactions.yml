@@ -5,7 +5,7 @@ jobs:
     runs-on: ubuntu-latest
     environment: Validate production deployment
     steps:
-      - id: test validate id
+      - id: test-validate-id
         name: Add comment after validation
         uses: actions/github-script@V6
         with:
