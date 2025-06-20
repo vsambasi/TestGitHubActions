@@ -4,6 +4,7 @@ jobs:
   ValidateProdDeployment:
     runs-on: ubuntu-latest
     environment: Validate production deployment
+    continue-on-error: true
     outputs:
         results: ${{job.status}}
     steps:
@@ -13,7 +14,7 @@ jobs:
   notify-on-reject:
     runs-on: ubuntu-latest
     needs: ValidateProdDeployment
-    if: needs.ValidateProdDeployment.result == 'failure'
+    if: needs.ValidateProdDeployment.result != 'success'
     steps:
       - name: Notify on rejects
         run: |
