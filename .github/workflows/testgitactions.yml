@@ -10,11 +10,6 @@ jobs:
         uses: actions/github-script@V6
         with:
           #github-token: ${{secrets.GIT_PAT_TOKEN}}
-          script: |
-            github.rest.issues.createComment({
-              owner: 'vesambas',
-              body: 'Deployment'
-            })
           if: ${{ github.job.status == 'cancelled'}}
           run: |
             echo "After clicking reject button"
