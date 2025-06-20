@@ -6,7 +6,6 @@ jobs:
     environment: Validate production deployment
     steps:
       - id: test-validate-id
-        
         name: Add comment after validation
         if: ${{ github.job.status == 'cancelled'}}
         run: |
