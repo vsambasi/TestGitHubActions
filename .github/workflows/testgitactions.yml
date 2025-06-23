@@ -3,8 +3,7 @@ on: workflow_dispatch
 jobs:
   ValidateProdDeployment:
     runs-on: ubuntu-latest
-    environment: 
-      name: Validate production deployment
+    environment: Validate production deployment
     continue-on-error: true
     steps:
       - id: test-validate-id
