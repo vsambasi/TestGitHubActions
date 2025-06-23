@@ -3,10 +3,9 @@ on: workflow_dispatch
 jobs:
   ValidateProdDeployment:
     runs-on: ubuntu-latest
-    environment: Validate production deployment
+    environment: 
+      name: Validate production deployment
     continue-on-error: true
-    outputs:
-        results: ${{job.status}}
     steps:
       - id: test-validate-id
         uses: actions/github-script@V6
