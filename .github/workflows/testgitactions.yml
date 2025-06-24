@@ -15,7 +15,7 @@ jobs:
     if: needs.ValidateProdDeployment.result == 'failure' || needs.ValidateProdDeployment.result == 'cancelled'
     steps:
       - name: Notify on rejects
-      - run: echo 'Testing details'
+        run: echo 'Testing details'
 
     
           
