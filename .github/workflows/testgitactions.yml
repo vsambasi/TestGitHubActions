@@ -15,9 +15,7 @@ jobs:
     steps:
       - name: Testing notifyonreject
       - run: echo 'Testing details'
-      - name: Notify on rejects
-        run: |
-          echo 'Inside failure'
+
     
           
   
