@@ -12,8 +12,9 @@ jobs:
   notify-on-reject:
     runs-on: ubuntu-latest
     needs: ValidateProdDeployment
-    if: failure() || cancelled()
     steps:
+      - name: Testing notifyonreject
+      - run: echo 'Testing details'
       - name: Notify on rejects
         run: |
           echo 'Inside failure'
