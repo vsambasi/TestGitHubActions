@@ -12,7 +12,7 @@ jobs:
   notify-on-reject:
     runs-on: ubuntu-latest
     needs: ValidateProdDeployment
-    if: needs.ValidateProdDeployment.result == 'failure' || needs.ValidateProdDeployment.result == 'cancelled'
+    if: steps.test-validate-id.result == 'failure' || steps.test-validate-id.result == 'cancelled'
     steps:
       - name: Notify on rejects
         run: echo 'Testing details'
