@@ -1,6 +1,6 @@
 name: Testing Projects
 on: workflow_dispatch
-jobs:More actions
+jobs:
   ValidateProdDeployment:
     runs-on: ubuntu-latest
     environment: Validate production deployment
@@ -13,7 +13,6 @@ jobs:More actions
     runs-on: ubuntu-latest
     needs: ValidateProdDeployment
     if: needs.ValidateProdDeployment.result == 'failure' || needs.ValidateProdDeployment.result == 'cancelled'
-    if: failure() || cancelled()
     steps:
       - name: Notify on rejects
       - run: echo 'Testing details'
