@@ -15,8 +15,8 @@ jobs:
     steps: 
       - name: Notify on rejects
         run: | 
-          echo "Inside Notify rejects "
-          if [[ "${{needs.ValidateProdDeployment.result}}" == "failure" ]]; then
+          echo "Inside Notify rejects"
+          if [[ "${{ needs.ValidateProdDeployment.result }}" == "failure" ]]; then
             echo "rejected=true" >> $GITHUB_OUTPUT
           else
             echo "rejected=false" >> $GITHUB_OUTPUT
