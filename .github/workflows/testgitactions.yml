@@ -12,8 +12,11 @@ jobs:
     runs-on: ubuntu-latest
     needs: ValidateProdDeployment
     if: failure()
+    outputs:
+      rejected: $ {{ steps.reject_id.outputs.rejected }}
     steps: 
       - name: Notify on rejects
+        id: reject_id
         run: | 
           if [[ "${{ needs.ValidateProdDeployment.result }}" == "failure" ]]; then
             echo "rejected=true" >> $GITHUB_OUTPUT ";"
@@ -21,7 +24,19 @@ jobs:
             echo "rejected=false" >> $GITHUB_OUTPUT ";"
           fi
           echo "Inside Notify rejects"
-          echo "After if"
+      - name: Echo Rejected
+        run: |
+          echo "Inside Echo Rejected"
+          echo "Rejected? ${{ steps.reject_id.outputs.rejected }}
+          if [[ "${{ steps.reject_id.outputs.rejected }}" == true ]]; then
+            echo "Inside true"
+          else
+            echo "Inside False"
+          fi
+          
+          
+          
+    
 
     
           
