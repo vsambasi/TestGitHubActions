@@ -1,4 +1,4 @@
-name: Testing Projects
+name: Other Impl 
 on: workflow_dispatch
 jobs:
   ValidateProdDeployment:
@@ -15,7 +15,7 @@ jobs:
     needs: ValidateProdDeployment
     if: always()
     steps: 
-      - name: Notify on rejects
+      - name: Notify on other Impl
         run: | 
           if [[ "${{ needs.ValidateProdDeployment.result }}" == "failure" ]]; then
             echo "rejected=true" >> $GITHUB_OUTPUT ";"
