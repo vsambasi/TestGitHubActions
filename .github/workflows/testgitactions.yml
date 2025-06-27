@@ -27,7 +27,7 @@ jobs:
       - name: Echo Rejected
         run: |
           echo "Inside Echo Rejected"
-          echo "Rejected? ${{ steps.reject_id.outputs.rejected }}
+          echo "Rejected? ${{ steps.reject_id.outputs.rejected }} "
           if [[ "${{ steps.reject_id.outputs.rejected }}" == true ]]; then
             echo "Inside true"
           else
