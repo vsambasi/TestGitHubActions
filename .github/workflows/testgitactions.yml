@@ -19,9 +19,9 @@ jobs:
         id: reject_id
         run: | 
           if [[ "${{ needs.ValidateProdDeployment.result }}" == "failure" ]]; then
-            echo "rejected=true" >> $GITHUB_OUTPUT ";"
+            echo "rejected=true" >> $GITHUB_OUTPUT
           else
-            echo "rejected=false" >> $GITHUB_OUTPUT ";"
+            echo "rejected=false" >> $GITHUB_OUTPUT
           fi
           echo "Inside Notify rejects"
       - name: Echo Rejected
