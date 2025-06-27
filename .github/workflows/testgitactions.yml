@@ -11,7 +11,7 @@ jobs:
   notify-on-reject:
     runs-on: ubuntu-latest
     needs: ValidateProdDeployment
-    if: success()
+    if: failure()
     outputs:
       rejected: $ {{ steps.reject_id.outputs.rejected }}
     steps: 
